@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.10
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Poetry
+        run: pip install poetry
+      - name: Install dependencies
+        run: poetry install --with dev
+      - name: Run ruff
+        run: poetry run ruff check .
+
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.10
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Poetry
+        run: pip install poetry
+      - name: Install dependencies
+        run: poetry install --with dev,test
+      - name: Run tests
+        run: poetry run coverage run -m pytest
+      - name: Generate coverage report
+        run: poetry run coverage report
