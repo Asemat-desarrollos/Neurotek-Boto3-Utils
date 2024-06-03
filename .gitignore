@@ -1,0 +1,13 @@
+# Cache files
+*cache*
+
+# Environment variables
+.env
+
+# Build files
+build
+dist
+*.egg-info
+
+# Coverage
+.coverage
