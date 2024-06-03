@@ -75,7 +75,7 @@ def download_s3_file(bucket: Bucket, key: str, target: IO[Any]) -> None:
         raise FileNotFoundError(error_message)
 
 
-def upload_s3_file(bucket: Bucket, key: str, data: bytes) -> str:
+def upload_s3_file(bucket: Bucket, key: str, data: bytes, **kwargs) -> str:
     """
     Uploads a file to an S3 bucket.
 
@@ -83,11 +83,12 @@ def upload_s3_file(bucket: Bucket, key: str, data: bytes) -> str:
         bucket: The S3 bucket resource.
         key: The key of the blob to be uploaded.
         data: The bytes to be uploaded.
+        **kwargs: Additional arguments to be passed to the `put` method.
 
     Returns:
         The Key of the uploaded image.
     """
     s3_object = bucket.Object(key)
-    s3_object.put(Body=data)
+    s3_object.put(Body=data, **kwargs)
 
     return s3_object.key
