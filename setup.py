@@ -15,7 +15,8 @@ install_requires = \
  'mypy-boto3-s3>=1.34.105,<2.0.0',
  'mypy-boto3-secretsmanager>=1.34.109,<2.0.0',
  'mypy-boto3-stepfunctions>=1.34.92,<2.0.0',
- 'poetry2setup>=1.1.0,<2.0.0']
+ 'poetry2setup>=1.1.0,<2.0.0',
+ 'setuptools>=70.0.0,<71.0.0']
 
 setup_kwargs = {
     'name': 'boto3-utils',
