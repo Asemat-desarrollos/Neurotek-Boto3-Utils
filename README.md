@@ -34,3 +34,6 @@ Desde la raíz del proyecto.
 Este proyecto está configurado para ejecutar pruebas en GitHub Actions. Puedes ver el estado de las pruebas en la pestaña "Actions" de este repositorio.
 
 Si desea contribuir a este proyecto, crea un Pull Request con tus cambios. Asegúrate de que todos los jobs de GitHub Actions pasen antes de solicitar la revisión de tu Pull Request.
+
+> ![IMPORTANTE]
+> Antes de publicar una nueva versión, asegúrate de ejecutar `poetry2setup > setup.py` para actualizar el archivo `setup.py` con la información de la versión actualizada.
