@@ -16,18 +16,18 @@ def get_secret(
     Args:
         secret_id: The ID of the secret.
         region_name: (Optional) The name of the AWS region. If not provided, it\
-            will be read from the `REGION_NAME` environment variable, or default\
-            to `us-east-1`.
+            will be read from the `AWS_DEFAULT_REGION` environment variable, or\
+            default to `us-east-1`.
 
     Environment variables:
-        REGION_NAME: (Optional) The name of the AWS region.
+        AWS_DEFAULT_REGION: (Optional) The name of the AWS region.
 
     Returns:
         The secret as a string or a dictionary.
     """
 
     if region_name is None:
-        region_name = os.environ.get("REGION_NAME", "us-east-1")
+        region_name = os.environ.get("AWS_DEFAULT_REGION", "us-east-1")
 
     session = boto3.session.Session()
     client: SecretsManagerClient = session.client(

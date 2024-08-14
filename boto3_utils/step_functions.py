@@ -20,17 +20,17 @@ def start_step_function(
         state_machine_arn: The ARN of the Step Function state machine.
         payload: The input to the execution.
         region_name: (Optional) The name of the AWS region. If not provided, it\
-            will be read from the `REGION_NAME` environment variable, or default\
-            to `us-east-1`.
+            will be read from the `AWS_DEFAULT_REGION` environment variable, or\
+            default to `us-east-1`.
 
     Environment variables:
-        REGION_NAME: (Optional) The name of the AWS region.
+        AWS_DEFAULT_REGION: (Optional) The name of the AWS region.
 
     Returns:
         The response from the `start_execution` call.
     """
     if region_name is None:
-        region_name = os.environ.get("REGION_NAME", "us-east-1")
+        region_name = os.environ.get("AWS_DEFAULT_REGION", "us-east-1")
 
     stepfunctions_client: SFNClient = boto3.client(
         "stepfunctions", region_name=region_name
