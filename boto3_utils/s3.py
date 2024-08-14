@@ -34,17 +34,17 @@ def get_s3_bucket(bucket_name: str, region_name: Optional[str] = None) -> Bucket
     Args:
         bucket_name: The name of the bucket.
         region_name: (Optional) The name of the AWS region. If not provided, it\
-            will be read from the `REGION_NAME` environment variable, or default\
-            to `us-east-1`.
+            will be read from the `AWS_DEFAULT_REGION` environment variable, or\
+            default to `us-east-1`.
 
     Environment variables:
-        REGION_NAME: (Optional) The name of the AWS region.
+        AWS_DEFAULT_REGION: (Optional) The name of the AWS region.
 
     Returns:
         An S3 bucket resource.
     """
     if region_name is None:
-        region_name = os.environ.get("REGION_NAME", "us-east-1")
+        region_name = os.environ.get("AWS_DEFAULT_REGION", "us-east-1")
 
     s3 = boto3.resource("s3", region_name=region_name)
     bucket: Bucket = s3.Bucket(bucket_name)

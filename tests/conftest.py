@@ -11,6 +11,8 @@ from mypy_boto3_s3 import S3ServiceResource
 from mypy_boto3_s3.service_resource import Bucket
 from pytest import fixture
 
+REGION_NAME = "us-east-1"
+
 # S3 data
 KEY = "Client/Project/test_doc.pdf"
 BUCKET_NAME = "my-bucket"
@@ -45,7 +47,7 @@ def mock_env(monkeypatch: MonkeyPatch):
 @fixture
 def mock_s3_resource() -> Generator[S3ServiceResource, None, None]:
     with moto.mock_aws():
-        yield boto3.resource("s3")
+        yield boto3.resource("s3", region_name=REGION_NAME)
 
 
 @fixture

@@ -26,6 +26,8 @@ jobs:
         run: poetry install --with dev
       - name: Run ruff
         run: poetry run ruff check .
+      - name: Run ruff
+        run: poetry run ruff format --check .
 
   test:
     runs-on: ubuntu-latest
