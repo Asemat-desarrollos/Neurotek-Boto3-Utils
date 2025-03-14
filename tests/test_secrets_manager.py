@@ -1,9 +1,8 @@
 import pytest
 
 from boto3_utils.secrets_manager import get_secret
-
-from .conftest import SECRET_DATA
-from .conftest import SECRET_NAME
+from tests.conftest import SECRET_DATA
+from tests.conftest import SECRET_NAME
 
 
 class TestSecretsManager:
