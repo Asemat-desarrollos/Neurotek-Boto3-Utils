@@ -1,7 +1,6 @@
 from boto3_utils.step_functions import start_step_function
-
-from .conftest import STATE_MACHINE_ARN
-from .conftest import STATE_MACHINE_EXECUTION_DATA
+from tests.conftest import STATE_MACHINE_ARN
+from tests.conftest import STATE_MACHINE_EXECUTION_DATA
 
 
 class TestStepFunctions:
