@@ -8,32 +8,19 @@ Este repositorio contiene utilidades para trabajar con Boto3. Está pensado para
 ## Instalación de dependencias de desarrollo
 
 ```bash
-poetry install --with dev,test
+uv sync --all-groups
 ```
 
 ## Build
 
-Solo instala [poetry](https://python-poetry.org/docs/) y ejecuta:
+Solo instala [uv](https://astral.sh/uv) y ejecuta:
 
 ```bash
-poetry build
+uv build
 ```
-
-## Instalación del paquete
-
-Para instalar el paquete recién creado, simplemente ejecuta:
-
-```bash
-poetry install
-```
-
-Desde la raíz del proyecto.
 
 ## Contribución
 
 Este proyecto está configurado para ejecutar pruebas en GitHub Actions. Puedes ver el estado de las pruebas en la pestaña "Actions" de este repositorio.
 
 Si desea contribuir a este proyecto, crea un Pull Request con tus cambios. Asegúrate de que todos los jobs de GitHub Actions pasen antes de solicitar la revisión de tu Pull Request.
-
-> ![IMPORTANTE]
-> Antes de publicar una nueva versión, asegúrate de ejecutar `poetry2setup > setup.py` para actualizar el archivo `setup.py` con la información de la versión actualizada.
