@@ -18,6 +18,7 @@ dependencies = [
 ]
 
 [build-system]
+# Setuptools is used only for compatibility with the old version of pip that AWS SAM uses
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
