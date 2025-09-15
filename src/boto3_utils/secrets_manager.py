@@ -1,15 +1,12 @@
 import json
 import os
 from typing import Any
-from typing import Optional
 
 import boto3.session
 from mypy_boto3_secretsmanager import SecretsManagerClient
 
 
-def get_secret(
-    secret_id: str, region_name: Optional[str] = None
-) -> str | dict[str, Any]:
+def get_secret(secret_id: str, region_name: str | None = None) -> str | dict[str, Any]:
     """
     Returns a secret from AWS Secrets Manager.
 

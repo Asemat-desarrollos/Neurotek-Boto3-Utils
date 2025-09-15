@@ -2,7 +2,6 @@ import os
 import re
 from typing import IO
 from typing import Any
-from typing import Optional
 
 import boto3
 from botocore.exceptions import ClientError
@@ -27,7 +26,7 @@ def get_bucket_name_and_key_from_uri(uri: str) -> tuple[str, str]:
     return match.group("bucket_name"), match.group("key")
 
 
-def get_s3_bucket(bucket_name: str, region_name: Optional[str] = None) -> Bucket:
+def get_s3_bucket(bucket_name: str, region_name: str | None = None) -> Bucket:
     """
     Returns an S3 bucket.
 

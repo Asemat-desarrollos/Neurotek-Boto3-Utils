@@ -1,7 +1,6 @@
 import json
 import os
 from typing import Any
-from typing import Optional
 
 import boto3
 from mypy_boto3_stepfunctions import SFNClient
@@ -11,7 +10,7 @@ from mypy_boto3_stepfunctions.type_defs import StartExecutionOutputTypeDef
 def start_step_function(
     state_machine_arn: str,
     payload: str | dict[str, Any],
-    region_name: Optional[str] = None,
+    region_name: str | None = None,
 ) -> StartExecutionOutputTypeDef:
     """
     Starts a Step Function execution.
