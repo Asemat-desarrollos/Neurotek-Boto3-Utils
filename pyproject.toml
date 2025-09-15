@@ -2,7 +2,7 @@
 
 [project]
 name = "boto3-utils"
-version = "1.3.2"
+version = "1.3.3"
 description = "Utilidades para trabajar con Boto3"
 readme = "README.md"
 authors = [
